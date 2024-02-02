@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d95c618f.css",
-    "main.js": "/portfolio/static/js/main.491dda35.js",
+    "main.css": "/portfolio/static/css/main.29efa02a.css",
+    "main.js": "/portfolio/static/js/main.749490ff.js",
     "static/media/bhut1.png": "/portfolio/static/media/bhut1.da7f08acece5cac4cf0b.png",
     "static/media/summerbod1.png": "/portfolio/static/media/summerbod1.adb23f71c7b9857f8072.png",
     "static/media/wokevillage1.png": "/portfolio/static/media/wokevillage1.ffecdfc1f8d105e87a67.png",
@@ -22,11 +22,11 @@
     "static/media/close-fill.svg": "/portfolio/static/media/close-fill.ea3237b2568b88a87d874240cbf3ddf5.svg",
     "index.html": "/portfolio/index.html",
     "static/media/hamburger-lg.svg": "/portfolio/static/media/hamburger-lg.47d9deaef838b5eb2d73bcf0f9a1f9cb.svg",
-    "main.d95c618f.css.map": "/portfolio/static/css/main.d95c618f.css.map",
-    "main.491dda35.js.map": "/portfolio/static/js/main.491dda35.js.map"
+    "main.29efa02a.css.map": "/portfolio/static/css/main.29efa02a.css.map",
+    "main.749490ff.js.map": "/portfolio/static/js/main.749490ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.d95c618f.css",
-    "static/js/main.491dda35.js"
+    "static/css/main.29efa02a.css",
+    "static/js/main.749490ff.js"
   ]
 }
