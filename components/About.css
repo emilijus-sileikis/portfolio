@@ -1,0 +1,73 @@
+.about-container {
+    padding: 2% 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.box-pl2 {
+    padding-left: 2rem;
+}
+
+.box-shadow-full {
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: white;
+    /*margin-bottom: 3rem;*/
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.general-info {
+    align-content: center;
+    text-align: center;
+}
+
+.about-info p {
+    margin-bottom: 1rem;
+    line-break: anywhere;
+}
+
+.title-s {
+    font-weight: 600;
+    color: #0F0F10;
+    font-size: 1.1rem;
+}
+
+.about-me {
+    text-align: justify;
+}
+
+.title-box-2 {
+    margin-bottom: 3rem;
+}
+
+.title-left {
+    font-size: 2rem;
+    position: relative;
+}
+
+.title-left:before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #A71D1D;
+    width: 100px;
+    bottom: -12px;
+}
+
+@media (min-width: 768px) {
+    .box-shadow-full {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-container {
+        padding: 2% 0;
+        transition: all 1s ease-in-out;
+    }
+}
+

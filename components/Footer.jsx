@@ -1,12 +1,26 @@
-import React from 'react';
-import styles from "../style.js";
-import SocialLinks from "./SocialLinks";
+import "./Footer.css";
+import {FaFacebook, FaGithub, FaInstagram, FaLinkedin} from "react-icons/fa";
 
 function Footer() {
+
     return (
-        <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
-            <SocialLinks />
-        </section>
+        <footer className="footer">
+            <div><p>Copyright © 2024. All Rights Reserved.</p></div>
+            <p>
+                <a href="https://www.linkedin.com/in/emilijus-sileikis-3b3a8b1b5/" target="_blank" rel="noreferrer">
+                    <FaLinkedin />
+                </a>
+                <a href="https://www.linkedin.com/in/emilijus-sileikis-3b3a8b1b5/" target="_blank" rel="noreferrer">
+                    <FaGithub />
+                </a>
+                <a href="https://www.linkedin.com/in/emilijus-sileikis-3b3a8b1b5/" target="_blank" rel="noreferrer">
+                    <FaFacebook />
+                </a>
+                <a href="https://www.linkedin.com/in/emilijus-sileikis-3b3a8b1b5/" target="_blank" rel="noreferrer">
+                    <FaInstagram />
+                </a>
+            </p>
+        </footer>
     );
 }
 

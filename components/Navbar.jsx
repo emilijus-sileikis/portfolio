@@ -1,54 +1,106 @@
-import {useState} from 'react';
-import {close, menu} from '../assets';
-import {navLinks} from "../constants/index";
+import React, { useState } from "react";
+import "./Navbar.css";
+import MenuIcon from "./MenuIcon";
 
-function Navbar() {
-    const [toggle, setToggle] = useState(false);
+function NavBar() {
+    const [click, setClick] = useState(false);
 
-    const closeMobileNav = () => {
-        setToggle(false);
+    const handleClick = () => setClick(!click);
+
+    const smoothScrollTo = (sectionId, duration = 1000) => {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            const startPosition = window.pageYOffset;
+            const targetPosition = targetSection.offsetTop;
+            let offset = 100;
+
+            if (sectionId === "home" || sectionId === "about") {
+                offset = 0;
+            }
+
+            const distance = (targetPosition - startPosition) - offset;
+            const startTime = performance.now();
+
+            function scrollAnimation(currentTime) {
+                handleClick();
+
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / duration, 1);
+                window.scrollTo(0, startPosition + distance * progress);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(scrollAnimation);
+                }
+            }
+
+            requestAnimationFrame(scrollAnimation);
+        }
     };
 
     return (
-        <nav className={`w-full flex py-6 justify-between items-center navbar`} id="navbar">
-            <p className={`w-[300px] h-[50px] text-gradient font-30 text-bold large-hidden`}>Developer Portfolio</p>
-            <p className={`w-[200px] h-[50px] text-gradient font-30 text-bold small-hidden`}>Portfolio</p>
+        <nav className="navbar" id="navbar">
+            <p className="title-deskt">Developer Portfolio</p>
+            <p className="title-mobile">Portfolio</p>
 
-            <ul className={`list-none sm:flex hidden justify-end items-center flex-1`}>
-
-                {navLinks.map((nav, index) => (
-                    <li key={nav.id}
-                        className={`font-poppins nav-hover font-normal cursor-pointer text-[16px] ${index === navLinks.length-1 ? `mr-0` : `mr-10`} text-white`}>
-                        <a href={`#${nav.id}`}>
-                            {nav.title}
+            <div id="navbar-deskt">
+                <ul className="desktop-nav">
+                    <li className="nav-links">
+                        <a href="#home" onClick={() => smoothScrollTo("home")}>
+                            Home
                         </a>
                     </li>
-                ))}
-
-            </ul>
-
-            <div className={`sm:hidden flex flex-1 justify-end items-center`}>
-                <img src={toggle ? close : menu} alt="menu" className={`w-[28px] h-[28px] object-contain`} onClick={() => setToggle((prev) => !prev)}/>
-
-                <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}>
-                    <ul className={`list-none flex justify-end items-center flex-col`}>
-
-                        {navLinks.map((nav, index) => (
-                            <li key={nav.id}
-                                className={`font-poppins font-normal cursor-pointer text-[16px] ${index === navLinks.length-1 ? `mb-0` : `mb-4`} text-white`}>
-                                <a href={`#${nav.id}`} onClick={closeMobileNav}>
-                                    {nav.title}
-                                </a>
-                            </li>
-                        ))}
-
-                    </ul>
-                </div>
-
+                    <li className="nav-links">
+                        <a href="#about" onClick={() => smoothScrollTo("about")}>
+                            About
+                        </a>
+                    </li>
+                    <li className="nav-links">
+                        <a href="#skills" onClick={() => smoothScrollTo("skills")}>
+                            Skills
+                        </a>
+                    </li>
+                    <li className="nav-links">
+                        <a href="#projects" onClick={() => smoothScrollTo("projects")}>
+                            Projects
+                        </a>
+                    </li>
+                </ul>
             </div>
 
+            <div className="mobile-nav">
+                <div className="nav-icon" onClick={handleClick}>
+                    <MenuIcon isOpen={click} onClick={handleClick}/>
+                </div>
+
+                <div className={click ? "show" : "hide"}>
+                    <div className="mob-menu">
+                        <ul className="mob-ul">
+                            <li className="mob-li">
+                                <a href="#home" onClick={() => smoothScrollTo("home")}>
+                                    Home
+                                </a>
+                            </li>
+                            <li className="mob-li">
+                                <a href="#about" onClick={() => smoothScrollTo("about")}>
+                                    About
+                                </a>
+                            </li>
+                            <li className="mob-li">
+                                <a href="#skills" onClick={() => smoothScrollTo("skills")}>
+                                    Skills
+                                </a>
+                            </li>
+                            <li className="mob-li">
+                                <a href="#projects" onClick={() => smoothScrollTo("projects")}>
+                                    Projects
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
     );
 }
 
-export default Navbar;
+export default NavBar;
