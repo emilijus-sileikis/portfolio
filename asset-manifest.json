@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.0877fb5a.css",
-    "main.js": "/portfolio/static/js/main.93d8f3fe.js",
+    "main.js": "/portfolio/static/js/main.e3fda661.js",
     "static/media/bhut1.png": "/portfolio/static/media/bhut1.da7f08acece5cac4cf0b.png",
     "static/media/summerbod1.png": "/portfolio/static/media/summerbod1.adb23f71c7b9857f8072.png",
     "static/media/wokevillage1.png": "/portfolio/static/media/wokevillage1.ffecdfc1f8d105e87a67.png",
@@ -23,10 +23,10 @@
     "index.html": "/portfolio/index.html",
     "static/media/hamburger-lg.svg": "/portfolio/static/media/hamburger-lg.47d9deaef838b5eb2d73bcf0f9a1f9cb.svg",
     "main.0877fb5a.css.map": "/portfolio/static/css/main.0877fb5a.css.map",
-    "main.93d8f3fe.js.map": "/portfolio/static/js/main.93d8f3fe.js.map"
+    "main.e3fda661.js.map": "/portfolio/static/js/main.e3fda661.js.map"
   },
   "entrypoints": [
     "static/css/main.0877fb5a.css",
-    "static/js/main.93d8f3fe.js"
+    "static/js/main.e3fda661.js"
   ]
 }
