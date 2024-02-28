@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.0877fb5a.css",
-    "main.js": "/portfolio/static/js/main.fd7ab9a5.js",
+    "main.js": "/portfolio/static/js/main.66bed7ba.js",
     "static/media/bhut1.png": "/portfolio/static/media/bhut1.da7f08acece5cac4cf0b.png",
     "static/media/summerbod1.png": "/portfolio/static/media/summerbod1.adb23f71c7b9857f8072.png",
     "static/media/wokevillage1.png": "/portfolio/static/media/wokevillage1.ffecdfc1f8d105e87a67.png",
@@ -11,6 +11,7 @@
     "static/media/wokevillage3.png": "/portfolio/static/media/wokevillage3.96dc4a6d6a1e54ef9aab.png",
     "static/media/wokevillage4.png": "/portfolio/static/media/wokevillage4.17b919431c8ccc1b8799.png",
     "static/media/bhut3.png": "/portfolio/static/media/bhut3.79029d42790fdc563ebc.png",
+    "static/media/workLogo.png": "/portfolio/static/media/workLogo.5a0cb8c5e50e4bd06b27.png",
     "static/media/bloom1.png": "/portfolio/static/media/bloom1.6e30095fd146df9354ae.png",
     "static/media/bloom4.png": "/portfolio/static/media/bloom4.913b6080a8e6b943382f.png",
     "static/media/bloom3.png": "/portfolio/static/media/bloom3.ceb74ab295a020286aab.png",
@@ -23,10 +24,10 @@
     "index.html": "/portfolio/index.html",
     "static/media/hamburger-lg.svg": "/portfolio/static/media/hamburger-lg.47d9deaef838b5eb2d73bcf0f9a1f9cb.svg",
     "main.0877fb5a.css.map": "/portfolio/static/css/main.0877fb5a.css.map",
-    "main.fd7ab9a5.js.map": "/portfolio/static/js/main.fd7ab9a5.js.map"
+    "main.66bed7ba.js.map": "/portfolio/static/js/main.66bed7ba.js.map"
   },
   "entrypoints": [
     "static/css/main.0877fb5a.css",
-    "static/js/main.fd7ab9a5.js"
+    "static/js/main.66bed7ba.js"
   ]
 }
