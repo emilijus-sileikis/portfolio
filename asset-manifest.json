@@ -1,15 +1,21 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.0877fb5a.css",
-    "main.js": "/portfolio/static/js/main.66bed7ba.js",
+    "main.css": "/portfolio/static/css/main.a67469ea.css",
+    "main.js": "/portfolio/static/js/main.f237316b.js",
+    "static/media/maistas.png": "/portfolio/static/media/maistas.7fce77a2936fc1747b4e.png",
     "static/media/bhut1.png": "/portfolio/static/media/bhut1.da7f08acece5cac4cf0b.png",
+    "static/media/tv3.png": "/portfolio/static/media/tv3.413103036967521be551.png",
+    "static/media/sportas.png": "/portfolio/static/media/sportas.1ef00fdfb3df50d8c337.png",
     "static/media/summerbod1.png": "/portfolio/static/media/summerbod1.adb23f71c7b9857f8072.png",
+    "static/media/Knet.png": "/portfolio/static/media/Knet.df0c3c9a6d6ed3ad3df9.png",
     "static/media/wokevillage1.png": "/portfolio/static/media/wokevillage1.ffecdfc1f8d105e87a67.png",
     "static/media/bhut2.png": "/portfolio/static/media/bhut2.27f51ff6514541c2d5d4.png",
     "static/media/summerbod3.png": "/portfolio/static/media/summerbod3.41c55617cea4aa7611be.png",
     "static/media/summerbod2.png": "/portfolio/static/media/summerbod2.3b0c49545ba29771c2fb.png",
     "static/media/wokevillage3.png": "/portfolio/static/media/wokevillage3.96dc4a6d6a1e54ef9aab.png",
     "static/media/wokevillage4.png": "/portfolio/static/media/wokevillage4.17b919431c8ccc1b8799.png",
+    "static/media/td.png": "/portfolio/static/media/td.e6b4939a3722520bed75.png",
+    "static/media/autobilis.png": "/portfolio/static/media/autobilis.f7ece778e44c11c166c1.png",
     "static/media/bhut3.png": "/portfolio/static/media/bhut3.79029d42790fdc563ebc.png",
     "static/media/workLogo.png": "/portfolio/static/media/workLogo.5a0cb8c5e50e4bd06b27.png",
     "static/media/bloom1.png": "/portfolio/static/media/bloom1.6e30095fd146df9354ae.png",
@@ -23,11 +29,11 @@
     "static/media/close-fill.svg": "/portfolio/static/media/close-fill.ea3237b2568b88a87d874240cbf3ddf5.svg",
     "index.html": "/portfolio/index.html",
     "static/media/hamburger-lg.svg": "/portfolio/static/media/hamburger-lg.47d9deaef838b5eb2d73bcf0f9a1f9cb.svg",
-    "main.0877fb5a.css.map": "/portfolio/static/css/main.0877fb5a.css.map",
-    "main.66bed7ba.js.map": "/portfolio/static/js/main.66bed7ba.js.map"
+    "main.a67469ea.css.map": "/portfolio/static/css/main.a67469ea.css.map",
+    "main.f237316b.js.map": "/portfolio/static/js/main.f237316b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0877fb5a.css",
-    "static/js/main.66bed7ba.js"
+    "static/css/main.a67469ea.css",
+    "static/js/main.f237316b.js"
   ]
 }
