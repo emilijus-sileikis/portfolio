@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilijus Šileikis | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { brand: '#e11d48' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+
+        .glass-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: none;
+            transition: transform 0.3s ease;
+
+            /* Layering fixes */
+            isolation: isolate;
+            backface-visibility: hidden;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .glass-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .glass-card:hover::after {
+            border-color: rgba(225, 29, 72, 0.4);
+        }
+
+        .glass-card:hover {
+            transform: translate3d(0, -6px, 0);
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn ease 1s forwards;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body class="bg-[#121212] text-gray-300 antialiased selection:bg-brand selection:text-white">
+
+<nav class="fixed w-full z-50 top-0 transition-all duration-300 border-b border-gray-800" style="background: rgba(18, 18, 18, 0.85); backdrop-filter: blur(10px);">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative">
+        <a href="#" class="text-white font-bold text-xl tracking-wider">EŠ.</a>
+
+        <div class="hidden md:flex space-x-8 text-sm font-medium">
+            <a href="#about" class="hover:text-brand transition">About</a>
+            <a href="#experience" class="hover:text-brand transition">Experience</a>
+            <a href="#projects" class="hover:text-brand transition">Projects</a>
+            <a href="#contact" class="hover:text-brand transition">Contact</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-brand transition outline-none">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#181818]/95 backdrop-blur-md border-b border-gray-800 py-6 px-6 shadow-2xl flex-col items-center gap-6 z-40">
+        <a href="#about" class="mobile-link text-lg font-medium text-gray-300 hover:text-brand transition">About</a>
+        <a href="#experience" class="mobile-link text-lg font-medium text-gray-300 hover:text-brand transition">Experience</a>
+        <a href="#projects" class="mobile-link text-lg font-medium text-gray-300 hover:text-brand transition">Projects</a>
+        <a href="#contact" class="mobile-link text-lg font-medium text-gray-300 hover:text-brand transition">Contact</a>
+    </div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-6 pt-40 pb-20 min-h-[90vh] flex flex-col justify-center">
+    <div class="fade-in">
+        <p class="text-brand font-mono mb-4 tracking-wide">Hi, my name is</p>
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight">Emilijus Šileikis.</h1>
+        <h2 class="text-4xl md:text-6xl font-bold text-gray-500 mb-8 tracking-tight">I build things for the web.</h2>
+        <p class="max-w-2xl text-lg text-gray-400 leading-relaxed mb-10">
+            I'm a Full-Stack Developer based in Vilnius, specializing in building exceptional digital experiences for everyone. Currently, I'm developing Magento and Laravel-based e-commerce platforms at "UAB KOSMELITA" while pursuing my Master's in Cybersecurity Management.
+        </p>
+
+        <div class="flex gap-4">
+            <a href="#projects" class="px-6 py-3 bg-brand text-white hover:bg-rose-700 rounded transition duration-300 font-medium">
+                Check out my work
+            </a>
+            <a href="https://github.com/emilijus-sileikis" target="_blank" class="px-6 py-3 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 flex items-center gap-2">
+                <i class="fab fa-github text-xl"></i> GitHub
+            </a>
+        </div>
+    </div>
+</main>
+
+<section id="about" class="py-24 bg-[#181818]">
+    <div class="max-w-6xl mx-auto px-6 fade-in delay-1">
+        <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-4">
+            <span class="text-brand font-mono text-xl">01.</span> About Me
+            <div class="h-[1px] bg-gray-700 flex-grow max-w-xs"></div>
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="text-gray-400">
+                <p class="mb-4 leading-relaxed">
+                    I am a friendly, hard-working, and highly motivated developer who loves solving complex problems. I graduated from the Faculty of Mathematics and Informatics at Vilnius University with a degree in Computer Science, and I am currently studying for my Master's degree in Cybersecurity Management at Mykolas Romeris University to deepen my technical expertise.
+                </p>
+                <p class="mb-6 leading-relaxed">
+                    With over three years of professional experience as a full-stack programmer, I quickly adapt to new information and environments. Here are a few technologies I've been working with recently:
+                </p>
+
+                <div class="grid grid-cols-2 gap-x-4 gap-y-2 font-mono text-sm text-gray-300">
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> PHP (Laravel, Magento)</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> JavaScript (React, Node)</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> HTML/CSS/Tailwind/Bootstrap</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> MySQL & PostgreSQL</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> Git, Docker, Ansible</div>
+                    <div class="flex items-center gap-2"><i class="fas fa-caret-right text-brand"></i> Linux (Debian, Ubuntu, Fedora)</div>
+                </div>
+            </div>
+
+            <div class="relative group mx-auto md:ml-auto md:mr-0 mt-12 md:mt-0 w-fit h-fit self-start md:self-center">
+                <div class="absolute inset-0 border-2 border-brand rounded translate-x-5 translate-y-5 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 z-0"></div>
+
+                <img src="./images/pic.jpg" alt="Emilijus Profile" class="relative z-10 block rounded shadow-2xl object-cover max-w-[280px] md:max-w-[320px] w-full transition duration-300 group-hover:-translate-y-1 group-hover:-translate-x-1">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience" class="py-24 max-w-6xl mx-auto px-6">
+    <div class="fade-in delay-2">
+        <h3 class="text-2xl font-bold text-white mb-12 flex items-center gap-4">
+            <span class="text-brand font-mono text-xl">02.</span> Where I've Worked
+            <div class="h-[1px] bg-gray-700 flex-grow max-w-xs"></div>
+        </h3>
+
+        <div class="space-y-12">
+            <div class="relative pl-8 md:pl-0">
+                <div class="md:grid md:grid-cols-4 gap-8 items-start">
+                    <div class="text-gray-500 font-mono text-sm mb-2 md:mb-0 md:mt-1">
+                        Jan 2025 — Present
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="text-xl font-bold text-white">Mid Full-Stack Programmer <span class="text-brand">@ UAB KOSMELITA</span></h4>
+                        <p class="text-sm text-gray-500 mb-4">Kaunas, Lithuania</p>
+                        <ul class="text-gray-400 space-y-2 text-sm leading-relaxed">
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-brand mt-1"></i> Developed and maintained Magento and Laravel-based e-commerce platforms, optimizing performance and API speeds.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-brand mt-1"></i> Designed custom Magento modules and functionalities, integrated third-party services and APIs.</li>
+                            <li class="flex items-start gap-2"><i class="fas fa-caret-right text-brand mt-1"></i> Refactored and modernized legacy Laravel code, introducing version control, CI/CD pipelines and bitbucket scripts.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-0">
+                <div class="md:grid md:grid-cols-4 gap-8 items-start">
+                    <div class="text-gray-500 font-mono text-sm mb-2 md:mb-0 md:mt-1">
+                        Jul 2022 — Dec 2024
+                    </div>
+                    <div class="md:col-span-3">
+                        <h4 class="text-xl font-bold text-white">Junior Full-Stack Programmer <span class="text-brand">@ TV3 Group</span></h4>
+                        <p class="text-sm text-gray-500 mb-4">Vilnius, Lithuania</p>
+                        <ul class="text-gray-400 space-y-2 text-sm leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-caret-right text-brand mt-1 shrink-0"></i>
+                                <span>Designed and developed dynamic websites on Laravel and WordPress from the ground up.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-caret-right text-brand mt-1 shrink-0"></i>
+                                <span>Worked heavily on full-stack related tasks for
+                                        <a href="https://www.tv3.lt/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-brand underline decoration-gray-600 hover:decoration-brand underline-offset-4 transition duration-300">tv3.lt</a>,
+                                        <a href="https://www.sportas.lt/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-brand underline decoration-gray-600 hover:decoration-brand underline-offset-4 transition duration-300">sportas.lt</a>,
+                                        <a href="https://www.krepsinis.net/" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-brand underline decoration-gray-600 hover:decoration-brand underline-offset-4 transition duration-300">krepsinis.net</a>
+                                            and other websites, creating adverts, adding new design features and other functionalities.
+                                    </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-caret-right text-brand mt-1 shrink-0"></i>
+                                <span>Worked in an Agile environment, collaborating closely with designers, project managers and QA team.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="py-24 bg-[#181818]">
+    <div class="max-w-6xl mx-auto px-6 fade-in delay-3">
+        <h3 class="text-2xl font-bold text-white mb-12 flex items-center gap-4">
+            <span class="text-brand font-mono text-xl">03.</span> Some Things I've Built
+            <div class="h-[1px] bg-gray-700 flex-grow max-w-xs"></div>
+        </h3>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="fas fa-briefcase text-4xl text-brand"></i>
+                    <span class="text-gray-500 text-xs font-mono">2022 - Present</span>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">Professional Work</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    Full-stack development across TV3 Group and UAB KOSMELITA, featuring complex web applications, high-traffic portals, and e-commerce platforms.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Web Full-Stack</li>
+                    <li>Laravel</li>
+                    <li>Magento</li>
+                    <li>Pimcore</li>
+                    <li>Postman</li>
+                    <li>MySQL</li>
+                    <li>PHP</li>
+                    <li>CI/CD</li>
+                </ul>
+                <button onclick="openGallery('Professional Work Experience', 'A collection of visual and functional assets from my professional roles at TV3 Group and UAB KOSMELITA. This includes work on high-traffic media portals, custom CMS integrations, and large-scale Magento e-commerce platforms.', ['./images/tv3-1.png', './images/tv3-2.png', './images/tv3-3.png', './images/tv3-4.png', './images/tv3-5.png', './images/tv3-6.png', './images/kosmelita-1.png', './images/kosmelita-2.png', './images/kosmelita-3.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="far fa-folder text-4xl text-brand"></i>
+                    <a href="https://github.com/emilijus-sileikis/bloom" target="_blank" class="text-gray-400 hover:text-brand transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">Laravel 10 CRUD Generator</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    A backend utility tool designed to automatically generate Create, Read, Update, and Delete operations to accelerate Laravel project development.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Laravel 10</li>
+                    <li>PHP</li>
+                    <li>CRUD</li>
+                    <li>CMS</li>
+                </ul>
+                <button onclick="openGallery('Laravel 10 CRUD Generator', 'A custom backend utility tool designed to automatically scaffold Create, Read, Update, and Delete operations, significantly accelerating Laravel 10 project development and enforcing consistent code structure.', ['./images/crud-1.png', './images/crud-2.png', './images/crud-3.png', './images/crud-4.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="far fa-folder text-4xl text-brand"></i>
+                    <a href="https://github.com/emilijus-sileikis/BHut" target="_blank" class="text-gray-400 hover:text-brand transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">BHut</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    An e-commerce web application focused on selling locally sourced and sustainable honey products. Built to handle varied categories and cart management.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Web Full-Stack</li>
+                    <li>PHP</li>
+                    <li>MySQL</li>
+                </ul>
+                <button onclick="openGallery('BHut', 'An e-commerce web application focused on selling locally sourced and sustainable honey products. Built to handle varied categories, product variations, and secure cart management using PHP and MySQL.', ['./images/bhut-1.png', './images/bhut-2.png', './images/bhut-3.png', './images/bhut-4.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="far fa-folder text-4xl text-brand"></i>
+                    <a href="https://github.com/emilijus-sileikis/summerbod" target="_blank" class="text-gray-400 hover:text-brand transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">Summerbod</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    A health and fitness web platform for tracking workouts and muscle groups. Includes automated installation and setup scripts written in Ansible.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Ansible</li>
+                    <li>Full-Stack</li>
+                    <li>HTML/CSS</li>
+                    <li>PHP</li>
+                    <li>Bash</li>
+                </ul>
+                <button onclick="openGallery('Summerbod', 'A health and fitness web platform for tracking workouts and muscle groups. Features a robust automated installation and environment setup script written entirely in Ansible.', ['./images/summerbod-1.png', './images/summerbod-2.png', './images/summerbod-3.png', './images/summerbod-4.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="fas fa-gamepad text-4xl text-brand"></i>
+                    <a href="https://github.com/emilijus-sileikis/Forgotten-Caverns" target="_blank" class="text-gray-400 hover:text-brand transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">Forgotten Caverns</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    A 2D Java-based quest game featuring interactive NPCs, a dialogue system, and inventory management for equipping gear and viewing character attributes.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Game Dev</li>
+                    <li>Java</li>
+                    <li>Scratch</li>
+                </ul>
+                <button onclick="openGallery('Forgotten Caverns', 'A simple 2D quest game developed entirely in Java. The core focus was building RPG mechanics from scratch, including an interactive dialogue system with moving NPCs, and a functional inventory system that allows players to manage attributes, view item descriptions, and change equipped gear to progress through tasks.', ['./images/caverns-1.png', './images/caverns-2.png', './images/caverns-3.png', './images/caverns-4.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+            <div class="glass-card rounded-xl p-6 flex flex-col h-full group">
+                <div class="flex justify-between items-center mb-6">
+                    <i class="fas fa-cube text-4xl text-brand"></i>
+                    <a href="https://github.com/emilijus-sileikis/WokeVillage" target="_blank" class="text-gray-400 hover:text-brand transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3 group-hover:text-brand transition">Woke Village</h4>
+                <p class="text-sm mb-6 flex-grow text-gray-400">
+                    A custom Minecraft plugin that introduces interactive helper NPCs to automate tasks. Features custom villagers with distinct professions and unique personality traits.
+                </p>
+                <ul class="flex flex-wrap gap-3 text-xs font-mono text-gray-500 mb-6">
+                    <li>Game Dev</li>
+                    <li>Java</li>
+                    <li>Minecraft</li>
+                    <li>OOP</li>
+                </ul>
+                <button onclick="openGallery('Woke Village', 'A custom Minecraft plugin designed to enhance gameplay by introducing intelligent helper NPCs. Players can utilize these villagers to automate specific tasks. Each NPC is programmed with distinct professions and personality traits that directly influence their in-game actions and decision-making.', ['./images/woke-1.png', './images/woke-2.png', './images/woke-3.png', './images/woke-4.png'])" class="w-full py-2 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 text-sm font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-images"></i> View Gallery
+                </button>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-32 text-center max-w-4xl mx-auto px-6">
+    <div class="fade-in delay-4">
+        <h3 class="text-brand font-mono mb-4 text-sm">04. What's Next?</h3>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
+        <p class="mb-10 text-lg text-gray-400 max-w-xl mx-auto">
+            Whether you have a question, an opportunity, or just want to say hi, my inbox is always open. I'll try my best to get back to you!
+        </p>
+        <div class="flex justify-center gap-4 flex-col sm:flex-row">
+            <a href="mailto:sileikise@gmail.com" class="px-8 py-4 border border-brand text-brand hover:bg-brand hover:text-white rounded transition duration-300 font-medium tracking-wide">
+                <i class="far fa-envelope mr-2"></i> sileikise@gmail.com
+            </a>
+            <a href="tel:+37065630663" class="px-8 py-4 border border-gray-700 text-gray-300 hover:border-brand hover:text-brand rounded transition duration-300 font-medium tracking-wide">
+                <i class="fas fa-phone mr-2"></i> +370 656 30663
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-8 text-sm font-mono text-gray-500 bg-[#181818]">
+    <div class="flex justify-center gap-6 mb-4">
+        <a href="https://github.com/emilijus-sileikis" target="_blank" class="hover:text-brand transition text-lg"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/emilijus-%C5%A1ileikis/" target="_blank" class="hover:text-brand transition text-lg"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/emilijus.s/" target="_blank" class="hover:text-brand transition text-lg"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/emilijus.sileikis" target="_blank" class="hover:text-brand transition text-lg"><i class="fab fa-facebook"></i></a>
+    </div>
+    <p class="hover:text-brand transition cursor-pointer">
+        Built by Emilijus Šileikis &copy; <span id="current-year"></span>
+    </p>
+</footer>
+
+<button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="fixed bottom-8 right-8 md:bottom-12 md:right-12 bg-brand text-white w-12 h-12 flex items-center justify-center rounded-full shadow-2xl opacity-0 pointer-events-none transition-all duration-300 z-40 hover:bg-rose-700 hover:-translate-y-1">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<div id="gallery-modal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+    <button onclick="closeGallery()" class="absolute top-6 right-8 text-gray-500 hover:text-white text-4xl transition z-50">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <div class="flex flex-col md:flex-row w-full h-full max-w-[1400px] mx-auto p-4 md:p-12 gap-8 md:gap-12 pt-20 md:pt-12">
+
+        <div id="gallery-images" class="w-full md:w-[80%] h-full overflow-y-auto pr-2 md:pr-4 flex flex-col gap-8 pb-20 custom-scrollbar">
+        </div>
+
+        <div class="w-full md:w-[20%] h-auto md:h-full flex flex-col pt-4">
+            <div class="sticky top-0">
+                <h3 id="gallery-title" class="text-3xl font-bold text-white mb-6 tracking-tight">Project Title</h3>
+                <div class="h-[2px] w-12 bg-brand mb-6"></div>
+                <p id="gallery-desc" class="text-gray-400 leading-relaxed text-sm md:text-base">
+                    Project description goes here.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #e11d48; }
+</style>
+
+<script>
+    // 1. Mobile Burger Menu Logic
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    const menuIcon = mobileBtn.querySelector('i');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+
+        // Swap icon between bars and X
+        if(mobileMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        } else {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    }
+
+    mobileBtn.addEventListener('click', toggleMenu);
+
+    // Close mobile menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // 2. Scroll to Top Button Visibility Logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            scrollToTopBtn.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+            scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            scrollToTopBtn.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+    });
+
+    // 3. Gallery Logic
+    function openGallery(title, description, images) {
+        const modal = document.getElementById('gallery-modal');
+        const grid = document.getElementById('gallery-images');
+
+        document.getElementById('gallery-title').innerText = title;
+        document.getElementById('gallery-desc').innerText = description;
+
+        grid.innerHTML = '';
+
+        images.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.className = "w-full rounded-sm object-cover";
+            grid.appendChild(img);
+        });
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    }
+
+    function closeGallery() {
+        const modal = document.getElementById('gallery-modal');
+        modal.classList.add('opacity-0');
+
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }, 300);
+    }
+
+    document.getElementById('gallery-modal').addEventListener('click', function(e) {
+        if (e.target === this || e.target.classList.contains('flex-col')) closeGallery();
+    });
+
+    // 4. Auto-updating Footer Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
